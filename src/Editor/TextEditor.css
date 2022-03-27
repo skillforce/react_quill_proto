@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+
+
+.text-editor {
+    width: 1086px;
+    margin: 0 auto;
+}
+
+.ql-editor {
+    min-height: 100px;
+    box-sizing: border-box;
+    height: 250px;
+    width: 704px;
+    border: 2px solid rgba(120, 120, 128, 0.2);
+    padding: 24px;
+}
+
+.ql-container {
+    margin: 0 0 24px 0 !important;
+    border: none !important;
+}
+
+.ql-toolbar {
+    height: 56px;
+    width: 388px;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+
+}
+
+.ql-toolbar button {
+    width: 25px;
+    height: 24px;
+}
+
+.ql-font {
+    width: 78px !important;
+}
+
+
+.ql-size {
+    width: 65px !important;
+}
+
+
+.ql-font-georgia {
+    font-family: 'Merriweather', serif;
+
+}
+
+.ql-font-roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+.ql-font-sans-serif {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.ql-font-times-new-roman {
+    font-family: 'EB Garamond', serif;
+}
+
+.ql-undo {
+    position: relative;
+    top: -5px;
+    left: 0;
+}
+
+.ql-redo {
+    position: relative;
+    margin-right: 30px;
+    top: -6px;
+    left: 10px;
+}
+
+.ql-redo::before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 32px;
+    background-color: rgba(120, 120, 128, 0.36);
+    transform: rotate(90deg);
+    position: relative;
+    top: 15px;
+    left: 20px
+
+}
+
+.ql-picker-label {
+    color: #000 !important;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 16px;
+}
+
+.ql-picker-label:hover {
+    color: black !important;
+}
+
+.png-bold {
+    height: 12px;
+    width: 11px;
+    background-image: url("/src/img/bold.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.ql-bold {
+    margin-left: 20px;
+}
+
+
+.png-bold:before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 32px;
+    background-color: rgba(120, 120, 128, 0.36);
+    position: relative;
+    transform: rotate(90deg);
+    top: 6px;
+    left: -45px;
+}
+
+.png-italic {
+    height: 12.85px;
+    width: 5.54px;
+    background-image: url("/src/img/italic.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.ql-italic {
+    margin-left: 5px;
+}
+
+.png-underline {
+    height: 15.6px;
+    width: 11.79px;
+    margin-top: 3px;
+    background-image: url("/src/img/underline.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.after-font-line-block {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 32px;
+    background-color: rgba(120, 120, 128, 0.36);
+    position: absolute;
+    transform: rotate(90deg);
+    top: 444px;
+    left: 184px;
+}
+
+.sizeSelectArrow {
+    height: 8.67px;
+    width: 9.67px;
+    background-image: url("/src/img/sizeSelectArrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 7px;
+    left: 55px;
+}
+
+.ql-picker-label {
+    border: none !important;
+    outline: none !important;
+}
+
+.ql-picker-label svg {
+    width: 0 !important;
+}
+
+.newFontSizeSizeTimesNewRoman {
+    font-size: 12.5px !important;
+    left: -6px;
+}
+
+.newFontSizeSizeTimesNewRoman::before {
+    line-height: 15px !important;
+}
+
+.newFontSizeSizeSansSerif {
+    font-size: 14px !important;
+    left: -6px;
+    top: 2px;
+}
+
+.newFontSizeSizeSansSerif:before {
+    text-align: center;
+}
+
+.ql-picker-options {
+    border-radius: 2px !important;
+    background-color: #FFFFFF !important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5) !important;
+    top: -140px !important;
+    left: -64px !important;
+}
+
+.ql-picker-options-size-change {
+    left: -17px !important;
+    top: -163px !important;
+}
+
+

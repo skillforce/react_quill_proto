@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;1,200&family=Roboto&display=swap');
+
+.popUp{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    top:0;
+    left:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+.popUp.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.popUp-content{
+    padding: 40px 32px 48px 32px;
+    box-sizing: border-box;
+    border: 1px solid #F2F2F2;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.5);
+    height: 608px;
+    width: 768px;
+    transform: scale(0.5);
+    transition: 0.3s all;
+}
+
+.popUp-content.active{
+    transform: scale(1);
+}
+
+.title-block{
+    display: flex;
+    align-items: center;
+    margin-bottom: 17px;
+}
+
+.title-name{
+    color: #000000;
+    font-family: Roboto;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 0.09px;
+    line-height: 42px;
+}
+
+.gift-officer-name{
+    color: #757575;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 19px;
+    margin-left: 8px;
+}
+
+
+.cross-image{
+    margin-left: 207px;
+}
+
+.error-msg{
+    color: #FF3B30;
+    font-family: Roboto;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 19px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
