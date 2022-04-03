@@ -13,9 +13,6 @@ const CustomRedo = () => (
 );
 
 
-
-
-// Quill Toolbar component
 export const QuillToolbar = () => {
 
 

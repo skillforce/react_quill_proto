@@ -4,7 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 
-
 .text-editor {
     width: 1086px;
     margin: 0 auto;
@@ -216,4 +215,13 @@
     top: -163px !important;
 }
 
+.blot-formatter__resize-handle {
+    border-radius: 10px !important;
+    background-color: white !important;
+    opacity: 1 !important;
+}
+
+.blot-formatter__toolbar {
+    display: none !important;
+}
 

@@ -5,23 +5,16 @@ import "react-quill/dist/quill.snow.css";
 import './TextEditor.css'
 import QuillImageDropAndPaste from "quill-image-drop-and-paste";
 import BlotFormatter from 'quill-blot-formatter';
-Quill.register('modules/blotFormatter', BlotFormatter);
-
-
-
-
 
 
 export const Editor = () => {
     const [state, setState] = React.useState({value: ''});
-    const editorQuill = useRef(null)
+    const editorQuill = useRef(null);
 
-;
+
     const handleChange = value => {
         console.log(value)
-        setTimeout(()=>{
-            setState({ value:value });
-        },0)
+        setState({value: value});
     };
 
 
@@ -46,7 +39,6 @@ export const Editor = () => {
         "code-block"
     ];
 
-    // Undo and redo functions for Custom Toolbar
     function undoChange() {
         this.quill.history.undo();
     }
@@ -55,18 +47,18 @@ export const Editor = () => {
         this.quill.history.redo();
     }
 
-// Add sizes to whitelist and register them
+
+
+
     const Size = Quill.import("formats/size");
     Size.whitelist = ["small", "large", "huge"];
-    Quill.register(Size, true);
+
 
     const icons = Quill.import('ui/icons');
     icons['bold'] = '<div class="png-bold"></div>';
     icons['italic'] = '<div class="png-italic"></div>';
     icons['underline'] = '<div class="png-underline"></div>';
 
-
-// Add fonts to whitelist and register them
     const Font = Quill.import("formats/font");
     Font.whitelist = [
         "roboto",
@@ -74,8 +66,12 @@ export const Editor = () => {
         "sans-serif",
         "georgia",
     ];
+
+
+    Quill.register(Size, true);
     Quill.register(Font, true);
     Quill.register('modules/imageDropAndPaste', QuillImageDropAndPaste)
+    Quill.register('modules/blotFormatter', BlotFormatter);
 
 
     const imageHandler = (dataUrl, type, imageData) => {
@@ -84,6 +80,7 @@ export const Editor = () => {
             maxHeight: 320,
             quality: .7
         }).then((miniImageData) => {
+            console.log(dataUrl)
             const blob = miniImageData.toBlob()
             const file = miniImageData.toFile('my_cool_image.png')
 
@@ -92,7 +89,7 @@ export const Editor = () => {
             console.log(`blob: ${blob}`)
             console.log(`file: ${file}`)
 
-            const quill=editorQuill.current.getEditor()
+            const quill = editorQuill.current.getEditor()
             //
             let index = (quill.getSelection() || {}).index;
             if (index === undefined || index < 0) index = quill.getLength();
@@ -103,7 +100,7 @@ export const Editor = () => {
     };
 
 
-     const modules = useMemo(()=>({
+    const modules = useMemo(() => ({
         toolbar: {
             container: "#toolbar",
             handlers: {
@@ -119,12 +116,16 @@ export const Editor = () => {
         imageDropAndPaste: {
             handler: imageHandler.bind(this)
         },
-         blotFormatter: {}
-    }),[]);
-
-     useEffect(()=>{
-         console.log(state.value)
-     })
+        blotFormatter: {
+            overlay: {
+                style: {
+                    border: '2px solid #00FFFF',
+                    borderRadius: '12px'
+                },
+                modules: ['Resize']
+            }
+        }
+    }), []);
 
 
     return (
@@ -137,7 +138,7 @@ export const Editor = () => {
                 modules={modules}
                 formats={formats}
             />
-            <EditorToolbar />
+            <EditorToolbar/>
         </div>
     );
 };
